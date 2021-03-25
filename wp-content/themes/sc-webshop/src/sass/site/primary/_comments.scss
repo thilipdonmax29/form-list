@@ -1,0 +1,12 @@
+.comments-area {
+	max-width: map-get($container-max-widths, "lg");
+	margin: 0 auto $grid-gutter-width;
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}

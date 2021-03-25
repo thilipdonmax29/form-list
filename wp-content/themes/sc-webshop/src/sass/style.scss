@@ -1,0 +1,83 @@
+/*!
+Theme Name: sc-webshop
+Theme URI: http://splitchennai.com/
+Author: David Sahlström
+Author URI: https://dsoulstream.com
+Description: Description
+Version: 1.4.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: sc-webshop
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned
+with others.
+
+sc-webshop is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+
+/* --------------------------------------------------------------
+# Variables & Mixins
+-------------------------------------------------------------- */
+@import "variables-site/variables";
+@import "mixins/mixins-master";
+
+/* --------------------------------------------------------------
+# Bootstrap
+-------------------------------------------------------------- */
+@import "bootstrap";
+
+/* --------------------------------------------------------------
+# Accessibility
+-------------------------------------------------------------- */
+@import "modules/accessibility";
+
+/* --------------------------------------------------------------
+# Alignments
+-------------------------------------------------------------- */
+@import "modules/alignments";
+
+/* --------------------------------------------------------------
+# Clearings
+-------------------------------------------------------------- */
+@import "modules/clearings";
+
+/* --------------------------------------------------------------
+# Cart Animations
+-------------------------------------------------------------- */
+@import "modules/slide-in-menu";
+
+/* --------------------------------------------------------------
+# Widgets
+-------------------------------------------------------------- */
+@import "site/secondary/widgets";
+
+/* --------------------------------------------------------------
+# Content
+-------------------------------------------------------------- */
+@import "site/site";
+
+/* --------------------------------------------------------------
+# Infinite scroll
+-------------------------------------------------------------- */
+@import "modules/infinite-scroll";
+
+/* --------------------------------------------------------------
+# Media
+-------------------------------------------------------------- */
+@import "media/media";
+
+/* --------------------------------------------------------------
+# Woocommerce
+-------------------------------------------------------------- */
+@import "woocommerce";
+
+/* --------------------------------------------------------------
+# Blocks
+-------------------------------------------------------------- */
+@import "blocks/blocks";
+@import "blocks/block-styles";
+@import "blocks/block-spacing";

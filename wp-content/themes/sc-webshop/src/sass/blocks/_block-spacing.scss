@@ -1,0 +1,62 @@
+/**
+ * Block spacing control styles.
+ */
+.has-spacing-margin-bottom {
+	margin-top: 0;
+	margin-bottom: 5rem;
+}
+
+.has-spacing-margin-top {
+	margin-top: 5rem;
+	margin-bottom: 0;
+}
+
+.has-spacing-margin-top-bottom {
+	margin-top: 2.5rem;
+
+	margin-bottom: 2.5rem;
+
+	@include media-breakpoint-up(lg) {
+		margin-top: 5rem;
+		margin-bottom: 5rem;
+	}
+}
+
+.has-spacing-no-margin {
+	margin-top: 0 !important; /* stylelint-disable-line */
+	margin-bottom: 0 !important; /* stylelint-disable-line */
+}
+
+.has-spacing-padding-top [class$="__inner-container"] {
+	padding-top: 5rem;
+	padding-bottom: 0;
+}
+
+.has-spacing-padding-top-bottom [class$="__inner-container"] {
+	padding-top: 2.5rem;
+
+	padding-bottom: 2.5rem;
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+	}
+}
+
+.has-spacing-padding-top-bottom-double [class$="__inner-container"] {
+	padding-top: 5rem;
+
+	padding-bottom: 5rem;
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 10rem;
+		padding-bottom: 10rem;
+	}
+
+
+}
+
+.has-spacing-no-padding [class$="__inner-container"] {
+	padding-top: 0 !important; /* stylelint-disable-line */
+	padding-bottom: 0 !important; /* stylelint-disable-line */
+}

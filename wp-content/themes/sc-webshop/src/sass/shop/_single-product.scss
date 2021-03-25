@@ -1,0 +1,196 @@
+/**
+ * Single Product
+ */
+.single-product {
+
+	div.product {
+		position: relative;
+		padding: 0;
+		margin-top: 4rem;
+		margin-right: auto;
+		margin-left: auto;
+
+		@include media-breakpoint-up(lg) {
+			max-width: map-get($container-max-widths, "lg");
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		@include media-breakpoint-up(xl) {
+			max-width: map-get($container-max-widths, "xl");
+		}
+
+		.product-header {
+			display: grid;
+			grid-gap: 2rem;
+			grid-template-areas:
+				"b . h h h h h h h p p ."
+				"i i i i d d d d d d d ."
+				"i i i i d d d d d d d ."
+				"i i i i d d d d d d d ."
+				"i i i i d d d d d d d .";
+
+			@include media-breakpoint-up(md) {
+				grid-template-columns: repeat(12, 1fr);
+			}
+
+			&::after {
+				z-index: -1;
+				content: "";
+				background-color: #faeae0;
+				grid-column: 2/13;
+				grid-row: 1/7;
+			}
+
+			.product-back-btn {
+				display: grid;
+				align-items: center;
+				margin-top: 4rem;
+				grid-area: b;
+			}
+
+			.product-title-wrap {
+				margin-top: 4rem;
+				margin-left: -2rem;
+				grid-area: h;
+
+				.product_title {  /* stylelint-disable-line */
+					margin-bottom: 0;
+
+					@extend .h2;
+				}
+				.product-cat {  /* stylelint-disable-line */
+					a {  /* stylelint-disable-line */
+						font-family: $font-family-monospace;
+						font-size: $font-size-sm;
+						color: $body-color;
+					}
+				}
+			}
+
+			.price {
+				margin-top: 4rem;
+				margin-bottom: 0;
+				text-align: right;
+				grid-area: p;
+
+				@extend .h2;
+			}
+
+			.woocommerce-product-gallery {
+				position: relative;
+				grid-area: i;
+
+				.woocommerce-product-gallery__trigger {  /* stylelint-disable-line */
+					position: absolute;
+					top: 1em;
+					right: 1em;
+					z-index: 99;
+					display: block;
+				}
+
+				.flex-viewport {  /* stylelint-disable-line */
+					margin-bottom: 1em;
+				}
+
+				// .flex-control-thumbs {
+				// 	display: grid;
+				// 	grid-gap: .5rem;
+				// 	grid-auto-flow: column;
+				// 	grid-auto-columns: 1fr;
+				// 	// grid-template-columns: repeat(auto-fill, minmax(60px, auto));
+				// 	margin: 0;
+				// 	padding: 0;
+
+				// 	li {
+				// 		list-style: none;
+				// 		cursor: pointer;
+
+				// 		img {
+				// 			opacity: .5;
+
+				// 			&.flex-active {
+				// 				opacity: 1;
+				// 			}
+				// 		}
+
+				// 		&:hover {
+				// 			img {
+				// 				opacity: 1;
+				// 			}
+				// 		}
+				// 	}
+				// }
+			}
+
+			.summary {
+				display: grid;
+				grid-area: d;
+				grid-template-rows: auto 1fr;
+
+				form.variations_form {  /* stylelint-disable-line */
+					position: relative;
+				}
+				.variations {  /* stylelint-disable-line */
+					position: relative;
+					display: inline-grid;
+					padding: calc(#{$spacer} * 2);
+					margin-left: calc(#{$spacer} * -2);
+					background-color: #f4e1d4;
+					grid-auto-flow: column;
+					grid-gap: $spacer * 2;
+
+					> div {  /* stylelint-disable-line */
+						position: relative;
+
+						&:not(:last-child) {  /* stylelint-disable-line */
+							padding-right: $spacer * 2;
+
+							&::after {  /* stylelint-disable-line */
+								position: absolute;
+								top: 0;
+								right: 0;
+								height: 100%;
+								content: "";
+								border-right: 1px solid rgba(0, 0, 0, 0.15);
+							}
+						}
+
+						.variable-items-wrapper .variable-item:not(.radio-variable-item) {  /* stylelint-disable-line */
+							background-color: transparent;
+						}
+
+						.woocommerce-variation {  /* stylelint-disable-line */
+							display: none !important;  /* stylelint-disable-line */
+						}
+						.quantity {  /* stylelint-disable-line */
+							margin-top: 5px;
+
+							input {  /* stylelint-disable-line */
+								width: 32px;
+								text-align: center;
+								background: transparent;
+								border: medium none;
+							}
+							a {  /* stylelint-disable-line */
+								width: 30px;
+								height: 30px;
+								padding: 0;
+								font-size: 20px;
+								line-height: 30px;
+							}
+						}
+					}
+				}
+				button[type="submit"] {  /* stylelint-disable-line */
+					position: absolute;
+					right: 0;
+					bottom: $spacer * -2;
+					min-width: 250px;
+					padding: 0.562rem;
+					transform: translateY(50%);
+				}
+			}
+		}
+	}
+}

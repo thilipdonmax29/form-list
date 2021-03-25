@@ -1,0 +1,70 @@
+{
+  "name": "sc-webshop",
+  "version": "1.5.0",
+  "private": true,
+  "description": "SPLIT Chennai start kit for WordPress projects.",
+  "author": {
+    "name": "David Sahlström",
+    "email": "david@splitchennai.com",
+    "url": "https://splitchennai.com/"
+  },
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wp",
+    "WordPress",
+    "startkit",
+    "start kit"
+  ],
+  "homepage": "https://bitbucket.org/splitchennai/wp-wc-start",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/splitchennai/wp-wc-start.git"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/splitchennai/wp-wc-start/issues"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@wpackio/entrypoint": "^5.0.0",
+    "bootstrap": "^4.4.1",
+    "classnames": "^2.2.6",
+    "popper.js": "^1.16.1",
+    "rfs": "^9.0.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@wordpress/scripts": "^12.5.0",
+    "@wpackio/scripts": "^5.0.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1"
+  },
+  "scripts": {
+    "bootstrap": "wpackio-scripts bootstrap",
+    "build": "wpackio-scripts build",
+    "start": "wpackio-scripts start",
+    "archive": "wpackio-scripts pack",
+    "format:js": "wp-scripts format-js ./src",
+    "lint:css": "wp-scripts lint-style './src/sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js ./src",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:md:js": "wp-scripts lint-md-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.scss": [
+      "wp-scripts lint-style"
+    ],
+    "**/*.js": [
+      "wp-scripts lint-js"
+    ]
+  }
+}

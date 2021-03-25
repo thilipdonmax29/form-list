@@ -1,0 +1,61 @@
+{
+  "name": "splitchennai/sc-webshop",
+  "type": "wordpress-site",
+  "authors": [
+    {
+      "name": "SPLIT Chennai",
+      "email": "hello@splitchennai.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+        "type": "git",
+        "url" : "git@bitbucket.org:splitchennai/sc-admin-lockdown.git"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-premium/advanced-custom-fields-pro",
+        "version": "master",
+        "type": "wordpress-plugin",
+        "source": {
+          "url": "https://github.com/wp-premium/advanced-custom-fields-pro.git",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+    "wpackagist-plugin/autodescription": "~4.0",
+    "wpackagist-plugin/white-label-cms": "~2.1",
+    "wpackagist-plugin/login-lockdown": "~1.8",
+    "wpackagist-plugin/user-switching": "~1.5",
+    "wpackagist-plugin/gumlet": ">=1.1-stable",
+    "wp-premium/advanced-custom-fields-pro": "master",
+    "splitchennai/sc-admin-lockdown": "dev-master"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "squizlabs/php_codesniffer": "3.*",
+    "wp-coding-standards/wpcs": "2.3.0",
+    "phpcompatibility/phpcompatibility-wp": "*",
+    "wp-cli/i18n-command": "^2.2.5"
+  },
+  "scripts": {
+    "lint-wpcs": "@php ./vendor/squizlabs/php_codesniffer/bin/phpcs ./wp-content/themes/sc-webshop",
+    "make-pot": "wp i18n make-pot ./wp-content/themes/sc-webshop wp-content/themes/sc-webshop/languages/sc-webshop.pot"
+  }
+}

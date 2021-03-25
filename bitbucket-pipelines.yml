@@ -1,0 +1,52 @@
+# This is the build configuration for Bitbucket to push to WPEngine.
+
+image: node:12.18.1
+options:
+  max-time: 15
+pipelines:
+    branches:
+        development:
+            - step:
+                caches:
+                    - node
+                name: Build & Deploy - Development
+                deployment: dev-projectname03
+                script:
+                    # Build
+                    # - cd wp-content/themes/sc-webshop
+                    # - npm install
+                    # - npm run build
+                    # - echo "Add Theme Dist files"
+                    # - git add -f dist/*
+                    # - git commit -m "ci: Add dist files"
+                    - git push -f git@git.wpengine.com:production/WPE-SITE-NAME03.git development
+                    - echo "Pushed to Development"
+    custom:
+        staging-deploy:
+            - step:
+                name: Build & Deploy - Staging
+                script:
+                    # Build
+                    # - cd wp-content/themes/sc-webshop
+                    # - npm install
+                    # - npm run build
+                    # - echo "Add Theme Dist files"
+                    # - git add -f dist/*
+                    # - git commit -m "ci: Add dist files"
+                    # Deploy to WPE
+                    - git push -f git@git.wpengine.com:production/WPE-SITE-NAME02.git staging
+                    - echo "Pushed to Staging"
+        production-deploy:
+            - step:
+                name: Build & Deploy - Production
+                script:
+                    # Build
+                    # - cd wp-content/themes/sc-webshop
+                    # - npm install
+                    # - npm run build
+                    # - echo "Add Theme Dist files"
+                    # - git add -f dist/*
+                    # - git commit -m "ci: Add dist files"
+                    # Deploy to WPE
+                    - git push -f git@git.wpengine.com:production/WPE-SITE-NAME02.git production
+                    - echo "Pushed to Production"

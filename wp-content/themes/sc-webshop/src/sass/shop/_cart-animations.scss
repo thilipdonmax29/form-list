@@ -1,0 +1,16 @@
+.header-cart {
+	transition: all 0.3s ease-in-out;
+	transform: scale(1);
+
+	a {
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+.highlight {
+	transform: scale(1.1);
+
+	a {
+		color: $primary;
+	}
+}

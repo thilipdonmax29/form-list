@@ -1,0 +1,23 @@
+/**
+ * Editor Structure
+ */
+
+/* Width of "default" blocks */
+.wp-block {
+	max-width: map-get($container-max-widths, "xl");
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+	max-width: map-get($container-max-widths, "xl") + 140px;
+}
+
+/* Style overall content */
+.editor-styles-wrapper {
+	background-color: $body-bg;
+}
+
+.editor-block-list__layout .editor-block-list__block,
+.editor-block-list__layout .editor-block-list__block p {
+	font-family: $font-family-base;
+}

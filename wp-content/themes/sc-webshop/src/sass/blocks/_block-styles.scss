@@ -1,0 +1,138 @@
+/**
+ * Block styles.
+ */
+
+/**
+ * Has background style.
+ */
+p.has-background,
+.wp-block-group.has-background,
+.wp-block-media-text.has-background,
+.wp-block-cover.has-background-dim {
+	padding: 0.9375rem;
+}
+
+/**
+ * Full screen style.
+ */
+.is-style-full-screen {
+	min-height: calc(100vh - 56px);
+}
+
+.admin-bar .is-style-full-screen {
+	min-height: calc(100vh - 56px);
+
+	@include media-breakpoint-up(lg) {
+		min-height: calc(100vh - 56px - 32px);
+	}
+}
+
+/**
+ * Button styles.
+ */
+.is-style-btn-block {
+	float: none;
+	margin-right: 0;
+	margin-left: 0;
+
+	.wp-block-button__link,
+	.block-editor-rich-text {
+
+		@extend .btn-block;
+	}
+}
+
+
+/**
+ * Font size styles.
+ */
+.has-small-font-size {
+	font-size: $small-font-size;
+}
+
+.has-regular-font-size {
+	font-size: $font-size-base;
+}
+
+.has-lead-font-size {
+	font-size: $lead-font-size;
+}
+
+/**
+ * Color styles.
+ */
+.has-primary-background-color {
+	background-color: $primary;
+}
+
+.has-primary-color {
+	color: $primary;
+}
+
+.has-secondary-background-color {
+	background-color: $secondary;
+}
+
+.has-secondary-color {
+	color: $secondary;
+}
+
+.has-success-background-color {
+	background-color: $success;
+}
+
+.has-success-color {
+	color: $success;
+}
+
+.has-info-background-color {
+	background-color: $info;
+}
+
+.has-info-color {
+	color: $info;
+}
+
+.has-warning-background-color {
+	background-color: $warning;
+}
+
+.has-warning-color {
+	color: $warning;
+}
+
+.has-danger-background-color {
+	background-color: $danger;
+}
+
+.has-danger-color {
+	color: $danger;
+}
+
+.has-gray-background-color {
+	background-color: $light;
+}
+
+.has-gray-color {
+	color: $light;
+}
+
+.has-white-background-color {
+	background-color: $white;
+}
+
+.has-white-color {
+	color: $white;
+}
+
+.has-black-background-color {
+	background-color: $black;
+}
+
+.has-black-color {
+	color: $black;
+}
+// Fix for links inside p tags.
+p.has-text-color a {
+	color: inherit !important; /* stylelint-disable-line */
+}

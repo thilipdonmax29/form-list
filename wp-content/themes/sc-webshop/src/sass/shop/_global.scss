@@ -1,0 +1,28 @@
+.cart-contents {
+	margin-left: 0.5rem;
+	color: $navbar-light-color;
+
+	&:hover {
+		color: $navbar-light-hover-color;
+	}
+
+	svg,
+	.fas {
+		margin-right: 5px;
+	}
+}
+
+.woocommerce-shop-wrapper {
+	margin-right: 1rem;
+	margin-left: 1rem;
+
+	@include media-breakpoint-up(lg) {
+		max-width: map-get($container-max-widths, "lg");
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	@include media-breakpoint-up(xl) {
+		max-width: map-get($container-max-widths, "xl");
+	}
+}

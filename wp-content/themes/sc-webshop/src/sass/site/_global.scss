@@ -1,0 +1,139 @@
+html {
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100%;
+}
+
+.site {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+}
+
+#main-nav {
+	// box-shadow: 0 0 2px 2px rgba(0,0,0,.15);
+	border-bottom: 1px solid $primary;
+
+	.custom-logo-link img {
+		width: auto;
+		max-height: 60px;
+	}
+
+	.navbar-collapse {
+
+		@include media-breakpoint-down(md) {
+			position: absolute;
+			top: 56px;
+			right: 20%;
+			left: 0;
+			z-index: 1000;
+			max-width: 250px;
+			height: 100vh !important; /* stylelint-disable-line */
+			overflow: hidden;
+			background: #fff;
+			box-shadow: 0 3px 2px 2px rgba(82, 65, 65, 0.15);
+			transition: all 0.2s ease-in-out;
+
+			&:not(.show) { /* stylelint-disable-line */
+				max-width: 0;
+			}
+			.navbar-nav { /* stylelint-disable-line */
+				min-width: 200px;
+				padding: 1rem;
+			}
+		}
+	}
+}
+
+#main-content {
+	overflow-x: hidden;
+}
+
+.admin-bar {
+
+	.sticky-top {
+
+		@include media-breakpoint-up(lg) {
+			top: 32px;
+		}
+	}
+}
+
+#page-footer {
+	background-color: $gray-300;
+	border-top: 1px solid $black;
+
+	.footer-wrap {
+		display: grid;
+		max-width: calc(100% - #{$grid-gutter-width});
+		margin: 0 auto;
+		grid-template-columns: repeat(12, 1fr);
+
+		@include media-breakpoint-up(lg) {
+			max-width: map-get($container-max-widths, "lg");
+		}
+
+		@include media-breakpoint-up(xl) {
+			max-width: map-get($container-max-widths, "xl");
+		}
+
+		> * {
+			grid-column: span 2;
+
+			&.footer-logo {
+
+				img {
+					max-width: 110px;
+				}
+			}
+
+			&.contact p,
+			&.address p {
+				font-family: $font-family-monospace;
+			}
+
+			&.address {
+				grid-column: span 5;
+			}
+
+			&.social {
+				grid-column: span 3;
+			}
+		}
+	}
+
+	.footer-menu-wrapper {
+		background-color: $green-dark;
+
+		> .nav {
+			justify-content: space-between;
+			max-width: calc(100% - #{$grid-gutter-width});
+			margin: 0 auto;
+
+			@include media-breakpoint-up(lg) {
+				max-width: map-get($container-max-widths, "lg");
+			}
+
+			@include media-breakpoint-up(xl) {
+				max-width: map-get($container-max-widths, "xl");
+			}
+
+			a {
+				padding: 1rem;
+				font-size: 0.875rem;
+				transition: all 0.15s ease-in;
+
+				@include media-breakpoint-up(lg) {
+
+					&:hover {
+						background-color: $primary;
+					}
+				}
+			}
+		}
+	}
+}

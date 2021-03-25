@@ -1,0 +1,334 @@
+/**
+ * Header cart
+ */
+.site-header-cart {
+
+	.widget_shopping_cart {
+		padding: 1rem;
+	}
+
+	.product_list_widget {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+/**
+ * Widget shopping cart.
+ */
+.widget_shopping_cart {
+
+	.woocommerce-mini-cart {
+		list-style: none;
+
+		li {
+			position: relative;
+			width: 100%;
+			padding: 1rem 0;
+			border-bottom: 1px solid #000;
+
+			@include clearfix();
+
+			.remove {
+				position: absolute;
+				top: 0.5rem;
+				right: 0;
+				padding: 0 0.5rem;
+			}
+
+			a:not(.remove) {
+				img {  /* stylelint-disable-line */
+					float: left;
+					max-width: 100px;
+					margin-right: 1rem;
+				}
+			}
+
+			.quantity {
+				display: block;
+			}
+		}
+	}
+
+	.woocommerce-mini-cart__total {
+		margin-top: 1rem;
+		text-align: right;
+	}
+
+	.woocommerce-mini-cart__buttons {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1rem;
+
+		&::before,
+		&::after {
+			display: none !important; /* stylelint-disable-line */
+		}
+
+		.button {
+
+			@extend .btn;
+			@extend .btn-light;
+
+			&.checkout {
+
+				@extend .btn-primary;
+			}
+		}
+	}
+}
+
+/**
+ * Star rating
+ */
+.star-rating {
+	position: relative;
+	width: 5.3em;
+	height: 1.618em;
+	overflow: hidden;
+	font-family: "star"; /* stylelint-disable-line */
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.618;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		float: left;
+		content: "\53\53\53\53\53";
+		opacity: 0.25;
+	}
+
+	span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		float: left;
+		padding-top: 1.5em;
+		overflow: hidden;
+	}
+
+	span::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		color: $link-color;
+		content: "\53\53\53\53\53";
+	}
+}
+
+p.stars {
+
+	a {
+		position: relative;
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		margin-right: 1px;
+		font-weight: 400;
+		text-decoration: none;
+		text-indent: -999em;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 1em;
+			height: 1em;
+			font-family: "star"; /* stylelint-disable-line */
+			line-height: 1;
+			color: $body-color;
+			text-indent: 0;
+			content: "\53";
+			opacity: 0.25;
+		}
+
+		&:hover {
+			~ a::before {  /* stylelint-disable-line */
+				color: $body-color;
+				content: "\53";
+				opacity: 0.25;
+			}
+		}
+	}
+
+	&:hover {
+
+		a {
+
+			&::before {
+				color: $link-color;
+				content: "\53";
+				opacity: 1;
+			}
+		}
+	}
+
+	&.selected {
+
+		a.active {
+
+			&::before {
+				color: $link-color;
+				content: "\53";
+				opacity: 1;
+			}
+
+			~ a::before { /* stylelint-disable-line */
+				color: $body-color;
+				content: "\53";
+				opacity: 0.25;
+			}
+		}
+
+		a:not(.active) { /* stylelint-disable-line */
+			&::before {
+				color: $link-color;
+				content: "\53";
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**
+ * Tabs
+ */
+.woocommerce-tabs {
+
+	ul.tabs {
+		padding: 0;
+		margin: 0;
+		text-align: left;
+		list-style: none;
+
+		li {
+			position: relative;
+			display: block;
+			margin: 0;
+
+			a { /* stylelint-disable-line */
+				display: block;
+				padding: 1em 0;
+			}
+		}
+	}
+
+	.panel {
+
+		h2:first-of-type {
+			margin-bottom: 1em;
+		}
+	}
+}
+
+/**
+ * Password strength meter
+ */
+.woocommerce-password-strength {
+	text-align: right;
+
+	&.strong {
+		color: $success;
+	}
+
+	&.short {
+		color: $danger;
+	}
+
+	&.bad {
+		color: $danger;
+	}
+
+	&.good {
+		color: $info;
+	}
+}
+
+/**
+ * Forms
+ */
+.form-row {
+
+	&.woocommerce-validated {
+
+		input.input-text {
+			box-shadow: inset 2px 0 0 $success;
+		}
+	}
+
+	&.woocommerce-invalid {
+
+		input.input-text {
+			box-shadow: inset 2px 0 0 $danger;
+		}
+	}
+}
+
+.required {
+	color: #f00;
+}
+
+/**
+ * Notices
+ */
+.woocommerce-breadcrumb {
+
+	@extend .container;
+	padding: 0;
+}
+
+/**
+ * Notices
+ */
+.woocommerce-notices-wrapper {
+
+	> div {
+		padding: 1rem;
+		color: $white;
+		text-align: center;
+
+		a {
+			color: $white;
+			text-decoration: underline;
+
+			@include media-breakpoint-up(lg) {
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.woocommerce-message {
+	background-color: $success;
+}
+
+.woocommerce-info {
+	background-color: $info;
+}
+
+.woocommerce-error {
+	background-color: $danger;
+}
+
+.woocommerce-info,
+.woocommerce-noreviews,
+p.no-comments {
+	background-color: $info;
+}
+
+.demo_store {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	padding: 1em;
+	margin: 0;
+	background-color: $info;
+}

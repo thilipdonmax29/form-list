@@ -1,0 +1,100 @@
+/**
+ * Block anchor target offset.
+ */
+.page-content,
+.entry-content {
+
+	:target::before {
+		z-index: -1;
+		display: block;
+		height: 100px;
+		margin-top: -100px;
+		visibility: hidden;
+		content: "";
+	}
+}
+
+/**
+ * Button block.
+ */
+div[data-type="core/button"] div[data-block] {
+	width: 100%;
+}
+
+
+/**
+ * Table block.
+ */
+.table {
+
+	table {
+		width: 100%;
+	}
+}
+
+/**
+ * Column block.
+ */
+.wp-block-columns {
+	margin-bottom: 0;
+
+	.wp-block-column {
+
+		@include media-breakpoint-down(lg) {
+			margin-bottom: $block-margin / 2;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+/**
+ * Cover block.
+ */
+.wp-block-cover {
+
+	&.has-background-dim:not(.has-background-gradient)::before {
+		opacity: 0;
+	}
+
+	.wp-block-cover__inner-container {
+		width: 100%;
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-cover-image.has-background-dim::before,
+.wp-block-cover.has-background-dim::before {
+	z-index: 0;
+}
+
+
+/**
+ * Group block.
+ */
+.wp-block-group {
+
+	&.is-style-full-screen {
+		display: flex;
+		align-items: center;
+
+		.wp-block-group__inner-container {
+			flex: 1;
+		}
+	}
+}
+
+/**
+ * Group block.
+ */
+.wp-block-audio {
+
+	audio {
+		max-width: 400px;
+	}
+}
