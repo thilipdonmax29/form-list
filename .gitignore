@@ -48,7 +48,7 @@ wp-content/cache/supercache/*
 /wp-content/mu-plugins/wpengine-excerpt*
 /wp-content/mu-plugins/wpe-wp-sign-on-plugin*
 /wp-content/plugins/wpengine-snapshot/snapshots
-/wp-content/plugins/*
+#/wp-content/plugins/*
 /wp-content/themes/index.php
 /wp-content/themes/twenty*
 /wp-content/mysql.sql
