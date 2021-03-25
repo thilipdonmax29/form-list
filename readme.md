@@ -1,4 +1,4 @@
-# SPLIT Chennai - WP Starter
+# WP Starter
 
 
 ## Included

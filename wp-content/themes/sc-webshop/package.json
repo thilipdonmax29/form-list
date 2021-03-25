@@ -2,9 +2,9 @@
   "name": "sc-webshop",
   "version": "1.5.0",
   "private": true,
-  "description": "SPLIT Chennai start kit for WordPress projects.",
+  "description": "WP start kit for WordPress projects.",
   "author": {
-    "name": "David Sahlström",
+    "name": "wp",
     "email": "david@splitchennai.com",
     "url": "https://splitchennai.com/"
   },
